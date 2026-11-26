@@ -343,8 +343,8 @@
       "city": "Montoro",
       "region": "Campania",
       "founded": 2017,
-      "story": "",
-      "story_en": "",
+      "story": "Tutto ha inizio con F'n'C (Fonz & Ciruzz), il nome con cui nasce il nostro primo DJ set, dall'unione di due amici e dalla passione comune per la musica reggae.\n\nIl nostro percorso prende forma anche grazie all'influenza dei Radio Out, gruppo reggae locale di cui Alfonso è chitarrista (la \"F\" di F'n'C sta proprio per Fonz, n.d.r.).\n\nDa quell'esperienza prende forma il desiderio di creare qualcosa di diverso: una realtà alternativa, indipendente e legata alla cultura reggae, che fino ad allora mancava nel nostro comprensorio.\n\nQuello che inizialmente era un semplice DJ set, nato quasi per gioco e alimentato dalla voglia di condividere musica, negli anni si è trasformato in qualcosa di molto più grande. Amici, appassionati e tante persone che hanno creduto nel progetto si sono unite a noi, contribuendo ognuno a modo proprio alla sua crescita.\n\nTra eventi organizzati per promuovere il territorio, serate nei locali e tanta musica condivisa, abbiamo costruito passo dopo passo la nostra identità. Fino al 2015, quando abbiamo deciso di investire i piccoli guadagni raccolti serata dopo serata in un sogno che avevamo da tempo: costruire un sound system tutto nostro.\n\nDue anni di lavoro, sacrifici, idee, esperimenti e tanta passione, fino a vedere finalmente realizzato quel progetto.\n\nNel 2017 nasce ufficialmente Spantka Sound System, il primo sound system Made in Montoro!\n\nMa per noi il reggae non è soltanto musica. È cultura, consapevolezza e, come ci ha insegnato il messaggio di Bob Marley, anche una forma di ribellione: una musica capace di dare voce a chi spesso non ne ha, di abbattere barriere e mettere in discussione ciò che ci circonda.\n\nIl sound system è il nostro strumento per portare avanti questo messaggio: un mezzo di diffusione, aggregazione e condivisione, proprio come nella tradizione giamaicana da cui tutto questo ha origine.\n\nMa ogni sound ha le proprie radici. E le nostre affondano nella terra di Montoro.\n\nCi piace definirci Rural Sound: un sound che guarda alla Giamaica, ma non dimentica da dove viene. Le nostre roots sono rurali, legate alla nostra terra, alle tradizioni contadine, alle persone e ai prodotti che raccontano il nostro territorio.\n\nAttraverso la musica vogliamo dare voce anche a tutto questo: promuovere le eccellenze locali, far conoscere i nostri prodotti, valorizzare le nostre origini e portare un pezzo di Montoro ovunque arrivino le nostre frequenze.\n\nPerché le radici non sono qualcosa che ci tiene fermi, ma qualcosa da cui partire per andare lontano.\n\nSpantka Sound System – Roots in the ground, sound in the air!",
+      "story_en": "It all starts with F'n'C (Fonz & Ciruzz), the name of our first DJ set, born from two friends and a shared passion for reggae music.\n\nOur path also took shape thanks to the influence of Radio Out, a local reggae band in which Alfonso plays guitar (the \"F\" in F'n'C stands for Fonz).\n\nFrom that experience came the wish to create something different: an alternative, independent reality rooted in reggae culture, which until then was missing in our area.\n\nWhat started as a simple DJ set, almost for fun and driven by the wish to share music, grew over the years into something much bigger. Friends, enthusiasts and many people who believed in the project joined us, each contributing in their own way.\n\nBetween events promoting the territory, nights in local venues and lots of shared music, we built our identity step by step. Until 2015, when we decided to invest the small earnings collected night after night in a long-held dream: building a sound system of our own.\n\nTwo years of work, sacrifices, ideas, experiments and plenty of passion, until we finally saw that project come true.\n\nIn 2017 Spantka Sound System was officially born, the first sound system Made in Montoro!\n\nBut for us reggae is not just music. It is culture, awareness and, as Bob Marley's message taught us, also a form of rebellion: music that gives a voice to those who often have none, breaks down barriers and questions the world around us.\n\nThe sound system is our tool to carry this message forward: a means of spreading, gathering and sharing, just like in the Jamaican tradition where all this began.\n\nBut every sound has its own roots. And ours run deep in the land of Montoro.\n\nWe like to call ourselves a Rural Sound: a sound that looks to Jamaica without forgetting where it comes from. Our roots are rural, tied to our land, to farming traditions, to the people and the products that tell the story of our territory.\n\nThrough music we want to give a voice to all of this too: promoting local excellence, making our products known, valuing our origins and bringing a piece of Montoro wherever our frequencies reach.\n\nBecause roots are not something that holds us still, but something to start from to go far.\n\nSpantka Sound System – Roots in the ground, sound in the air!",
       "instagram": "https://www.instagram.com/spantkasoundsystem/",
       "facebook": "",
       "lat": 40.8195,
@@ -2057,6 +2057,20 @@
       "facebook": "",
       "lat": 43.8386,
       "lon": 12.4161
+    },
+    {
+      "id": "nobada",
+      "name": "Nobada",
+      "photo": "/img/1df4579d8874.webp",
+      "city": "Eboli",
+      "region": "Campania",
+      "founded": 2022,
+      "story": "",
+      "story_en": "",
+      "instagram": "https://www.instagram.com/nobadasoundsystem/",
+      "facebook": "",
+      "lat": 40.6175,
+      "lon": 15.0566
     }
   ]
 }
