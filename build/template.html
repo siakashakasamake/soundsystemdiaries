@@ -730,6 +730,7 @@
   .sd3-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:22px;align-items:start}
   .sd3-card{background:#141210;color:var(--cream);border:1px solid rgba(228,209,159,.14);border-radius:18px;overflow:hidden}
   .sd3-photo{position:relative;margin:14px 14px 0;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#0c0c0b}
+  .sd3-credit{margin:8px 16px 0;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.06em;color:rgba(243,226,176,.6);text-align:right}.sd3-credit a{color:inherit;text-decoration:underline}
   .sd3-photo img,.sd3-photo .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .sd3-zoom{position:absolute;right:12px;bottom:12px;width:40px;height:40px;border-radius:10px;border:0;background:rgba(12,12,11,.72);color:var(--cream);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px)}
   .sd3-zoom:hover{background:var(--red)}
@@ -2030,7 +2031,7 @@ var SOUNDS_MAP_DATA = __SOUNDS_DATA__;
     'sd.chip':'Sound System','sd.founded':'Fondato nel','sd.region':'Regione','sd.city':'Città','sd.story':'La storia',
     'sd.nostory':'La storia di questo sound arriverà presto. Fai parte del sound? Mandaci la vostra storia, come avete costruito l’impianto e una foto: la pubblichiamo qui.',
     'sd.sendstory':'Manda la vostra storia','sd.share':'Condividi','sd.copied':'Link copiato','sd.location':'Dove',
-    'sd.area':'Zona indicativa nella regione','sd.kind':'Musica','sd.zoom':'Ingrandisci la foto','sd.back':'Tutti i sound',
+    'sd.area':'Zona indicativa nella regione','sd.kind':'Musica','sd.zoom':'Ingrandisci la foto','sd.photo':'Foto:','sd.back':'Tutti i sound',
     'map.sounds':'Sound','map.events':'Eventi','map.noevents':'Nessun evento in programma al momento',
     'map.toevents':'Vai agli eventi','search.ph':'Cerca un sound o una città…','search.none':'Nessun sound trovato','search.allRegions':'Tutte le regioni'
   });
@@ -2042,7 +2043,7 @@ var SOUNDS_MAP_DATA = __SOUNDS_DATA__;
     'sd.chip':'Sound System','sd.founded':'Founded','sd.region':'Region','sd.city':'City','sd.story':'The story',
     'sd.nostory':'The story of this sound is coming soon. Part of the crew? Send us your story, how you built the system and a photo: we will publish it here.',
     'sd.sendstory':'Send your story','sd.share':'Share','sd.copied':'Link copied','sd.location':'Where',
-    'sd.area':'Approximate area within the region','sd.kind':'Music','sd.zoom':'Enlarge photo','sd.back':'All sounds',
+    'sd.area':'Approximate area within the region','sd.kind':'Music','sd.zoom':'Enlarge photo','sd.photo':'Photo:','sd.back':'All sounds',
     'map.sounds':'Sounds','map.events':'Events','map.noevents':'No upcoming events right now',
     'map.toevents':'Go to events','search.ph':'Search a sound or a city…','search.none':'No sound found','search.allRegions':'All regions'
   });
@@ -2461,6 +2462,7 @@ var SOUNDS_MAP_DATA = __SOUNDS_DATA__;
         '<div class="sd3-grid">' +
           '<div class="sd3-card sd3-main">' +
             '<div class="sd3-photo">' + photoHtml + (photoHtml.indexOf('<img') === 0 ? '<button type="button" class="sd3-zoom" id="sdZoom" aria-label="' + esc(Ld('sd.zoom')) + '">' + IC.zoom + '</button>' : '') + '</div>' +
+            (s.photoCredit ? '<p class="sd3-credit">' + esc(Ld('sd.photo')) + ' ' + (s.photoCreditUrl ? '<a href="' + esc(s.photoCreditUrl) + '" target="_blank" rel="noreferrer">' + esc(s.photoCredit) + '</a>' : esc(s.photoCredit)) + '</p>' : '') +
             '<div class="sd3-body">' +
               '<span class="sd3-chip">' + esc(Ld('sd.chip')) + '</span>' +
               '<h1>' + esc(s.name) + '</h1>' +

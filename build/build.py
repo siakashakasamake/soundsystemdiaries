@@ -97,7 +97,8 @@ for x in sounds:
                      'lat': x['lat'], 'lon': x['lon'],
                      'genres': {'roots': False, 'dub': False, 'steppers': False}, 'vinyl': None, 'selfBuilt': None,
                      'instagram': x.get('instagram') or None, 'facebook': x.get('facebook') or None, 'color': None,
-                     'hasPhoto': bool(x.get('photo')), **({'story': x['story_it']} if x['story_it'] else {})})
+                     'hasPhoto': bool(x.get('photo')), **({'story': x['story_it']} if x['story_it'] else {}),
+                     **({'photoCredit': x['photo_credit'], 'photoCreditUrl': x.get('photo_credit_url') or None} if x.get('photo_credit') else {})})
 story_en = {x['id']: x['story_en_l'] for x in sounds if x['story_en_l']}
 
 D = ['', ' d1', ' d2', ' d3', ' d4', ' d5']
