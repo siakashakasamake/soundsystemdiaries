@@ -1,0 +1,230 @@
+<title>Stile SSD</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: una colonna di "pagine di diario" scure, bande tricolore come separatori, mockup dei formati in scala */
+:root{
+  --ink:#0c0c0b; --panel:#171512; --line:#2c2822;
+  --cream:#f3e2b0; --muted:#b8a985; --gold:#dc9605; --gold-l:#ffd98a;
+  --red:#ab0a05; --red-l:#e8291f; --green:#0a5a0a; --green-l:#3fae4f;
+  --display:'Anton',Impact,'Arial Narrow',sans-serif;
+  --body:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --mono:'Space Mono',ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--cream);font-family:var(--body);font-size:17px;line-height:1.55}
+.tri{height:10px;background:linear-gradient(90deg,var(--red) 0 33.33%,var(--gold) 33.33% 66.66%,var(--green) 66.66%)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(56px,11vw,128px);line-height:.9}
+h1 em{font-style:normal;color:var(--gold-l)}
+h2{font-size:clamp(34px,5.5vw,56px);line-height:1}
+h3{font-size:26px;line-height:1.1}
+p{margin:0;max-width:65ch}
+.chip{display:inline-block;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:var(--red);color:var(--cream);padding:6px 10px}
+.lede{font-size:20px;color:var(--muted);margin-top:20px}
+.lede b{color:var(--cream)}
+section{display:grid;gap:22px;padding-block:44px;border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.box{background:var(--panel);border:1px solid var(--line);padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
+.box p{font-size:15.5px;color:var(--muted)}
+.box p b{color:var(--cream)}
+/* palette */
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.sw div{border:1px solid var(--line);min-width:0}
+.sw i{display:block;height:84px}
+.sw span{display:block;padding:10px 12px;font-family:var(--mono);font-size:12.5px;line-height:1.45;color:var(--muted)}
+.sw span b{display:block;color:var(--cream);font-family:var(--body);font-size:15px}
+/* type */
+.ty{display:grid;gap:14px}
+.ty .row{display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:baseline;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.ty .row>span{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.s-d{font-family:var(--display);font-size:clamp(40px,7vw,72px);line-height:.95;text-transform:uppercase}
+.s-b{font-family:var(--body);font-weight:700;font-size:24px}
+.s-m{font-family:var(--mono);font-weight:700;font-size:16px;letter-spacing:.2em;text-transform:uppercase}
+/* format mockups */
+.fmts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;align-items:end}
+.fm{display:grid;gap:10px;min-width:0}
+.ph{position:relative;background:linear-gradient(180deg,#2a1d10,var(--ink));border:1px solid var(--line);overflow:hidden;width:100%;max-width:100%}
+.ph:before,.ph:after{content:"";position:absolute;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red) 0 33.33%,var(--gold) 33.33% 66.66%,var(--green) 66.66%)}
+.ph:before{top:0}.ph:after{bottom:0}
+.r916{aspect-ratio:9/16}.r45{aspect-ratio:4/5}
+.safe{position:absolute;left:6%;right:6%;top:13%;bottom:18%;border:1px dashed rgba(255,217,138,.55)}
+.ph .t{position:absolute;left:0;right:0;top:20%;text-align:center;font-family:var(--display);text-transform:uppercase;font-size:clamp(20px,3.2vw,30px);line-height:.95;padding:0 10%}
+.ph .t em{font-style:normal;color:var(--gold-l)}
+.ph .u{position:absolute;left:50%;bottom:22%;transform:translateX(-50%);white-space:nowrap;font-family:var(--mono);font-weight:700;font-size:9.5px;background:var(--cream);color:var(--ink);padding:4px 7px}
+.fm .cap{font-family:var(--mono);font-size:12.5px;color:var(--muted);line-height:1.5}
+.fm .cap b{color:var(--cream);font-family:var(--body);font-size:15px;display:block}
+/* do / dont */
+.dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.dd ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.dd li{padding-left:28px;position:relative;font-size:16px}
+.dd li:before{position:absolute;left:0;top:0;font-family:var(--mono);font-weight:700}
+.yes li:before{content:"✓";color:var(--green-l)}
+.no li:before{content:"✕";color:var(--red-l)}
+.dd h3{margin-bottom:12px}
+/* spec table */
+.tbl{overflow-x:auto;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);background:var(--panel)}
+td:first-child{font-weight:700;white-space:nowrap}
+td{font-variant-numeric:tabular-nums}
+/* caption sample */
+.cap-ex{background:var(--panel);border-left:4px solid var(--gold);padding:18px 20px;font-size:16px;display:grid;gap:10px;max-width:640px}
+.cap-ex .h{color:var(--gold-l)}
+/* checklist */
+.ck{display:grid;gap:8px;counter-reset:c}
+.ck label{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;background:var(--panel);border:1px solid var(--line);cursor:pointer}
+.ck input{accent-color:var(--gold);width:18px;height:18px;margin-top:3px;flex:none}
+.ck input:focus-visible{outline:2px solid var(--gold-l);outline-offset:2px}
+.ck input:checked+span{color:var(--muted);text-decoration:line-through}
+.big-quote{font-family:var(--display);text-transform:uppercase;font-size:clamp(30px,5vw,48px);line-height:1;color:var(--cream)}
+.big-quote em{font-style:normal;color:var(--red-l)}
+@media (max-width:520px){.ty .row{grid-template-columns:1fr;gap:4px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="tri"></div>
+<div class="wrap">
+  <header style="display:grid;gap:18px">
+    <span class="chip">Sound System Diaries · guida interna</span>
+    <h1>Lo stile<br><em>SSD</em></h1>
+    <p class="lede">Come devono essere fatti <b>reel, storie, post, caroselli e cover</b> di Sound System Diaries. Ogni contenuto ha un concetto suo, ma tutti parlano la stessa lingua: casse, cultura, diario.</p>
+  </header>
+
+  <section>
+    <span class="eyebrow">L'identità</span>
+    <p class="big-quote">Sound System Diaries non è un archivio.<br><em>È un diario.</em></p>
+    <div class="grid">
+      <div class="box"><h3>Diario</h3><p>Si scrive <b>"diario"</b>, mai "archivio". È vivo, cresce ogni settimana con le storie dei sound.</p></div>
+      <div class="box"><h3>Nessuna distinzione</h3><p>Niente <b>"VS"</b>, classifiche o confronti. Il sound veterano e quello nato ieri stanno sulla stessa pagina.</p></div>
+      <div class="box"><h3>Solo fatti veri</h3><p>Ogni informazione viene da una fonte. Le citazioni sono <b>parola per parola</b>. Se non lo sappiamo, non lo scriviamo.</p></div>
+      <div class="box"><h3>Nomi interi</h3><p>Sempre il nome completo del sound, scritto come lo scrivono loro: <b>Skankin' Tree</b>, <b>Green Mountain Hi-Fi</b>.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Colori</span>
+    <h2>La palette</h2>
+    <p>Fondo sempre scuro, testo crema. Il tricolore rasta (rosso, oro, verde) chiude ogni contenuto con due bande, in alto e in basso.</p>
+    <div class="sw">
+      <div><i style="background:#0c0c0b;box-shadow:inset 0 0 0 1px #2c2822"></i><span><b>Nero notte</b>#0c0c0b · fondo</span></div>
+      <div><i style="background:#f3e2b0"></i><span><b>Crema</b>#f3e2b0 · testo</span></div>
+      <div><i style="background:#ffd98a"></i><span><b>Oro chiaro</b>#ffd98a · parola chiave</span></div>
+      <div><i style="background:#ab0a05"></i><span><b>Rosso</b>#ab0a05 · chip, bande</span></div>
+      <div><i style="background:#dc9605"></i><span><b>Oro</b>#dc9605 · bande, evidenze</span></div>
+      <div><i style="background:#0a5a0a"></i><span><b>Verde</b>#0a5a0a · bande</span></div>
+      <div><i style="background:#e8291f"></i><span><b>Rosso acceso</b>#e8291f · punti mappa, "Da nord a sud"</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Tipografia</span>
+    <h2>Tre caratteri, tre ruoli</h2>
+    <div class="ty">
+      <div class="row"><span>ANTON · titoli<br>maiuscolo, grande</span><div class="s-d">Si accendono tanti sound</div></div>
+      <div class="row"><span>ARCHIVO 700 · testi<br>frasi brevi</span><div class="s-b">Altamura · dal 1996, sull'onda della prima generazione</div></div>
+      <div class="row"><span>SPACE MONO 700 · etichette<br>spaziato, maiuscolo</span><div class="s-m">Roots · Reggae · Dub · Culture</div></div>
+    </div>
+    <p style="color:var(--muted)">Una parola chiave per titolo può andare in oro chiaro. Mai più di due righe di titolo per schermata.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Formati</span>
+    <h2>Le misure</h2>
+    <p>La linea tratteggiata è la zona sicura: testi e loghi restano dentro, così non finiscono sotto i pulsanti di Instagram o tagliati nella griglia.</p>
+    <div class="fmts">
+      <div class="fm"><div class="ph r916"><div class="safe"></div><div class="t">Ogni weekend<br><em>si accendono tanti sound</em></div><div class="u">soundsystemdiaries.it</div></div><div class="cap"><b>Reel e storia</b>1080×1920 · 9:16<br>max 30 MB · 15–30 s</div></div>
+      <div class="fm"><div class="ph r45"><div class="safe" style="top:9%;bottom:9%"></div><div class="t" style="top:30%">Il diario<br><em>da nord a sud</em></div></div><div class="cap"><b>Post e carosello</b>1080×1350 · 4:5<br>stessa grafica su ogni slide</div></div>
+      <div class="fm"><div class="ph r916"><div class="safe" style="top:21%;bottom:21%;border-color:rgba(232,41,31,.7)"></div><div class="t" style="top:30%">Il diario<br><em style="color:var(--cream);font-family:var(--body);font-weight:700;font-size:.45em;text-transform:none">dei sound system italiani</em></div></div><div class="cap"><b>Cover fissata</b>1080×1920 · nella griglia si vede<br>solo il centro (riquadro rosso)</div></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Video</span>
+    <h2>Movimento e musica</h2>
+    <div class="grid">
+      <div class="box"><h3>Tutto a tempo</h3><p>Flyer, foto e testi entrano <b>sul battito</b>, come casse che pompano. Niente fade lenti a caso.</p></div>
+      <div class="box"><h3>La tune</h3><p>Solo tune nostre o fornite in chat: <b>stasera/a.wav</b>, Natural Mystic "Spring Ray", Prince Alla &amp; King Alpha "In the Ghetto". Volume normalizzato.</p></div>
+      <div class="box"><h3>Apertura</h3><p>Nel primo secondo si capisce di cosa parla: titolo grande o immagine forte, <b>niente intro vuote</b>.</p></div>
+      <div class="box"><h3>Chiusura</h3><p>Ultima schermata: logo SSD, frase finale e il link in chip crema. Poi dissolvenza a nero.</p></div>
+      <div class="box"><h3>Fluido</h3><p>Nessun fotogramma bloccato o saltato. Si controlla tutto il video prima di mandarlo.</p></div>
+      <div class="box"><h3>Foto vere</h3><p>Foto e schermate reali dei sound e del sito. Se la foto è di un fotografo, va il <b>credito</b>.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Testi e caption</span>
+    <h2>Come scriviamo</h2>
+    <div class="cap-ex">
+      <span class="eyebrow" style="color:var(--muted)">Esempio di caption</span>
+      <p>Ogni weekend si accendono tanti sound, da nord a sud. Il tuo evento non c'è? Aggiungiamolo.</p>
+      <p>Tutti gli eventi su soundsystemdiaries.it</p>
+      <p class="h">#soundsystem #reggae #dub #soundsystemculture #italia</p>
+    </div>
+    <div class="grid">
+      <div class="box"><h3>Caption corta</h3><p>Due o tre frasi al massimo, poi <b>5 hashtag</b>, non di più.</p></div>
+      <div class="box"><h3>La call to action</h3><p><b>"Tutti gli eventi su soundsystemdiaries.it"</b>. Mai "Ci vediamo lì".</p></div>
+      <div class="box"><h3>Spotlight</h3><p>Raccontano il sound, <b>senza date di eventi</b>. Nessun numero di sound nelle scritte a schermo.</p></div>
+      <div class="box"><h3>Testi dei sound</h3><p>Quando un sound ci manda il suo testo, <b>non cambiamo le parole</b>: correggiamo solo refusi e punteggiatura.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Regole fisse</span>
+    <div class="dd">
+      <div class="box yes"><h3>Sì</h3><ul>
+        <li>"Il diario dei sound system italiani"</li>
+        <li>Un concetto e uno stile diversi per ogni contenuto</li>
+        <li>Sound con foto prima di quelli senza</li>
+        <li>Storie sul sito solo se le scrive il sound</li>
+        <li>Saluto "Greetings and love" nei messaggi</li>
+        <li>Fonte del satellite nei crediti quando si usa la mappa</li>
+      </ul></div>
+      <div class="box no"><h3>No</h3><ul>
+        <li>"Archivio"</li>
+        <li>"VS", classifiche, confronti tra sound</li>
+        <li>Fatti inventati o citazioni ritoccate</li>
+        <li>Date degli eventi negli Spotlight</li>
+        <li>Musica presa da altri senza permesso</li>
+        <li>Dati personali dei minori (Green Mountain Hi-Fi: solo soprannomi, e prima il consenso di ragazzi e genitori)</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Scheda tecnica</span>
+    <h2>Esportazione</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Formato</th><th>Misura</th><th>Durata</th><th>File</th></tr></thead>
+      <tbody>
+        <tr><td>Reel</td><td>1080×1920, 30 fps</td><td>15–30 s</td><td>MP4 H.264, audio AAC 192k, sotto 30 MB</td></tr>
+        <tr><td>Storia</td><td>1080×1920</td><td>fino a 15 s per schermata</td><td>MP4 o JPG</td></tr>
+        <tr><td>Post</td><td>1080×1350</td><td>—</td><td>JPG alta qualità</td></tr>
+        <tr><td>Carosello</td><td>1080×1350 per slide</td><td>fino a 20 slide</td><td>JPG, consegna in ZIP</td></tr>
+        <tr><td>Cover fissata</td><td>1080×1920</td><td>—</td><td>JPG, contenuto al centro</td></tr>
+        <tr><td>Foto sul sito</td><td>larghezza max 1080</td><td>—</td><td>WEBP</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Prima di pubblicare</span>
+    <h2>Checklist</h2>
+    <div class="ck">
+      <label><input type="checkbox" id="c1"><span>C'è scritto "diario", non "archivio"</span></label>
+      <label><input type="checkbox" id="c2"><span>Nomi dei sound completi e scritti giusti</span></label>
+      <label><input type="checkbox" id="c3"><span>Ogni fatto ha una fonte, le citazioni sono identiche</span></label>
+      <label><input type="checkbox" id="c4"><span>Testi dentro la zona sicura, bande tricolore in alto e in basso</span></label>
+      <label><input type="checkbox" id="c5"><span>Video a tempo con la tune, senza blocchi, sotto 30 MB</span></label>
+      <label><input type="checkbox" id="c6"><span>Caption corta con 5 hashtag e "Tutti gli eventi su soundsystemdiaries.it"</span></label>
+      <label><input type="checkbox" id="c7"><span>Il concetto è diverso dagli ultimi contenuti</span></label>
+      <label><input type="checkbox" id="c8"><span>Consensi presenti se ci sono minori</span></label>
+    </div>
+  </section>
+</div>
+<div class="tri"></div>

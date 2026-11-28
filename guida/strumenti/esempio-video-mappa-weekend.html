@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden;background:#04060a;color:#f3e2b0}
+#cv{position:absolute;left:0;top:0}
+.bar{position:absolute;left:0;right:0;height:16px;z-index:70;background:linear-gradient(90deg,#ab0a05 0 33.33%,#dc9605 33.33% 66.66%,#0a5a0a 66.66%)}
+#hd{position:absolute;left:0;right:0;top:190px;text-align:center;z-index:40}
+#hd .k{display:inline-flex;align-items:center;gap:12px}
+#hd img{width:56px;height:56px;border-radius:50%}
+#hd .k span{font-family:'Space Mono';font-weight:700;font-size:20px;letter-spacing:.22em;background:#ab0a05;padding:7px 12px}
+#hd .t{font-family:Anton;font-size:112px;line-height:.95;text-transform:uppercase;margin-top:0;text-shadow:0 6px 30px rgba(0,0,0,.9)}
+#hd .t em{font-style:normal;color:#ffd98a}
+#hd .d{font-family:'Space Mono';font-weight:700;font-size:28px;letter-spacing:.2em;margin-top:8px;color:#ffd98a}
+#card{position:absolute;left:0;top:0;width:560px;z-index:35;opacity:0;transform-origin:50% 100%}
+#card .im{width:560px;height:560px;background:#111 center/contain no-repeat;border:8px solid #f3e2b0;border-bottom:none;box-shadow:0 30px 80px rgba(0,0,0,.8)}
+#card .tx{background:#0c0c0b;border:8px solid #f3e2b0;border-top:none;padding:16px 20px 18px;box-shadow:0 30px 80px rgba(0,0,0,.8)}
+#card .dy{font-family:'Space Mono';font-weight:700;font-size:22px;letter-spacing:.12em;color:#0c0c0b;background:#ffd98a;display:inline-block;padding:4px 10px}
+#card .ti{font-family:Anton;text-transform:uppercase;line-height:1.02;margin-top:10px}
+#card .vn{font-family:'Archivo';font-weight:700;font-size:24px;margin-top:6px;color:rgba(243,226,176,.85)}
+#line{position:absolute;width:3px;background:linear-gradient(180deg,#f3e2b0,rgba(255,217,138,.3));z-index:34;opacity:0;transform-origin:50% 0}
+#cta{position:absolute;left:0;right:0;top:1430px;text-align:center;z-index:45;opacity:0}
+#cta .t{font-family:Anton;font-size:84px;line-height:1;text-transform:uppercase;text-shadow:0 6px 30px rgba(0,0,0,.9)}
+#cta .t em{font-style:normal;color:#ffd98a}
+#cta .u{display:inline-block;margin-top:24px;font-family:'Space Mono';font-weight:700;font-size:28px;background:#f3e2b0;color:#0c0c0b;padding:11px 18px}
+#cred{position:absolute;left:0;right:0;bottom:28px;text-align:center;z-index:45;font-family:'Space Mono';font-size:15px;color:rgba(243,226,176,.6)}
+</style></head><body>
+<canvas id="cv" width="1080" height="1920"></canvas>
+<div id="topf" style="position:absolute;left:0;right:0;top:0;height:460px;background:linear-gradient(180deg,rgba(4,6,10,.7) 0,rgba(4,6,10,0) 100%);z-index:2"></div><div id="line"></div>
+<div id="card"><div class="im" id="cim"></div><div class="tx"><div class="dy" id="cdy"></div><div class="ti" id="cti"></div><div class="vn" id="cvn"></div></div></div>
+<div id="hd"><div class="t">Questo <em>weekend</em></div><div class="d">27 – 29 NOVEMBRE</div></div>
+<div id="cta"><div class="t">L'Italia si accende<br><em>questo weekend</em></div><div class="u">Tutti gli eventi su soundsystemdiaries.it</div></div>
+
+<div class="bar" style="top:0"></div><div class="bar" style="bottom:0"></div>
+<img id="s7" src="sat7s.jpg" style="display:none"><img id="s9" src="sat9s.jpg" style="display:none">
+<script src="data.js"></script><script>
+const DUR=NB*B;window.DUR=DUR;const N=EV.length;
+const $=i=>document.getElementById(i),cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-cl(x),3),eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2},eb=x=>{x=cl(x);const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const my=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;const W=(la,lo)=>[lo,-my(la)];
+const X=$('cv').getContext('2d');
+const SAT=[{img:$('s7'),z:7,x0:65,y0:42},{img:$('s9'),z:9,x0:260,y0:169,f:158/256*0.75}];
+function drawSat(L,C,a){if(a<=0)return;const k=256*Math.pow(2,L.z)/360*(L.f||1),img=L.img,IW=img.naturalWidth,IH=img.naturalHeight;if(!IW)return;
+ const wl=C.x-C.cx/C.s,wt=C.y-C.cy/C.s,wr=C.x+(1080-C.cx)/C.s,wb=C.y+(1920-C.cy)/C.s;
+ let sx0=(wl+180)*k-L.x0*256*(L.f||1),sy0=(wt+180)*k-L.y0*256*(L.f||1),sx1=(wr+180)*k-L.x0*256*(L.f||1),sy1=(wb+180)*k-L.y0*256*(L.f||1);
+ const f=1080/(sx1-sx0);let dx=0,dy=0;if(sx0<0){dx=-sx0*f;sx0=0}if(sy0<0){dy=-sy0*f;sy0=0}if(sx1>IW)sx1=IW;if(sy1>IH)sy1=IH;
+ const dw=(sx1-sx0)*f,dh=(sy1-sy0)*f;if(dw<=0||dh<=0)return;X.globalAlpha=a;X.drawImage(img,sx0,sy0,sx1-sx0,sy1-sy0,dx,dy,dw,dh);X.globalAlpha=1}
+const FULL={x:12.6,y:-my(42.0),s:78,cx:540,cy:1000},FIN={x:10.9,y:-my(43.8),s:100,cx:540,cy:1010};
+const CAM=EV.map(e=>{const w=W(e.lat,e.lon);return{x:w[0],y:w[1],s:190,cx:540,cy:1330}});
+function mix(a,b,u,bump){const k=eio(u);const s=Math.exp(Math.log(a.s)+(Math.log(b.s)-Math.log(a.s))*k-bump*Math.sin(Math.PI*k));return{x:a.x+(b.x-a.x)*k,y:a.y+(b.y-a.y)*k,s,cx:a.cx+(b.cx-a.cx)*k,cy:a.cy+(b.cy-a.cy)*k}}
+function camAt(bt){if(bt<IN-0.6)return{...FULL,s:FULL.s*(1+0.03*bt)};
+ for(let i=0;i<N;i++){const b0=IN+i*PER;const from=i?CAM[i-1]:FULL;if(bt<b0+0.35)return mix(from,CAM[i],(bt-(b0-0.6))/0.95,i?0.45:0);if(bt<b0+PER-0.6)return{...CAM[i],s:CAM[i].s*(1+0.02*(bt-b0))}}
+ return mix(CAM[N-1],FIN,(bt-(IN+N*PER-0.6))/1.4,0.1)}
+const DAYX=0;const DAY={'2026-11-27':'VEN 27 NOVEMBRE','2026-11-28':'SAB 28 NOVEMBRE','2026-11-29':'DOM 29 NOVEMBRE'};
+window.render=function(t){const bt=t/B,lv=LV[Math.min(LV.length-1,Math.floor(t*30))]||0;const C=camAt(bt);
+ const P=(la,lo)=>{const w=W(la,lo);return[C.cx+(w[0]-C.x)*C.s,C.cy+(w[1]-C.y)*C.s]};
+ X.fillStyle='#04060a';X.fillRect(0,0,1080,1920);
+ // night satellite
+ X.filter='brightness(.5) saturate(.65) hue-rotate(185deg)';const sa=eo(t/1.2);drawSat(SAT[0],C,sa);drawSat(SAT[1],C,sa*cl((C.s-110)/50));X.filter='none';
+ X.fillStyle='rgba(6,14,34,.35)';X.fillRect(0,0,1080,1920);
+ // glowing coastline
+ const draw=cl(t/1.6);X.lineJoin='round';X.shadowColor='rgba(255,200,110,.9)';X.shadowBlur=14;X.strokeStyle=`rgba(255,214,140,${0.55+0.2*lv})`;X.lineWidth=Math.max(1.4,C.s/70);
+ POLY.forEach(poly=>poly.forEach(ring=>{const k=Math.floor(ring.length*draw);if(k<2)return;X.beginPath();for(let j=0;j<k;j++){const p=P(ring[j][1],ring[j][0]);j?X.lineTo(p[0],p[1]):X.moveTo(p[0],p[1])}X.stroke()}));X.shadowBlur=0;
+ // city lights (every sound in the diary)
+ DOTS.forEach((d,i)=>{const a=cl((t-0.8-(47-d[0])/11*1.2)/0.3);if(a<=0)return;const [x,y]=P(d[0],d[1]);if(x<-20||x>1100||y<-20||y>1940)return;
+  const r=Math.max(2,C.s/45);const g=X.createRadialGradient(x,y,0,x,y,r*5);g.addColorStop(0,`rgba(255,214,140,${0.6*a})`);g.addColorStop(1,'rgba(255,190,90,0)');X.fillStyle=g;X.fillRect(x-r*5,y-r*5,r*10,r*10);X.fillStyle=`rgba(255,236,190,${a})`;X.beginPath();X.arc(x,y,r*0.6,0,7);X.fill()});
+ // event cities light up
+ const fin=bt>=IN+N*PER-0.6;
+ EV.forEach((e,i)=>{const b0=IN+i*PER,u=(bt-b0)*B;if(u<0&&!fin)return;const [x,y]=P(e.lat,e.lon);const cur=!fin&&bt<b0+PER;const k=fin?1:eb(u/0.4);
+  const R=(cur?26:14)*(1+0.25*lv)*k;const g=X.createRadialGradient(x,y,0,x,y,R*4);g.addColorStop(0,'rgba(255,230,160,.95)');g.addColorStop(.3,'rgba(255,170,60,.6)');g.addColorStop(1,'rgba(255,120,40,0)');X.fillStyle=g;X.fillRect(x-R*4,y-R*4,R*8,R*8);
+  X.fillStyle='#fff4d6';X.beginPath();X.arc(x,y,R*0.32,0,7);X.fill();
+  if(cur){for(let r=0;r<2;r++){const ph=((t/B)+r/2)%1;X.strokeStyle=`rgba(255,217,138,${1-ph})`;X.lineWidth=3;X.beginPath();X.arc(x,y,20+ph*120,0,7);X.stroke()}}
+  // city name
+  const fs=cur?64:(fin?34:0);if(fs){X.save();X.font=`${fs}px Anton`;X.textAlign='center';X.lineWidth=fs*0.16;X.strokeStyle='rgba(0,0,0,.75)';X.fillStyle=cur?'#ffd98a':'#f3e2b0';X.globalAlpha=cur?cl((u-0.3)/0.25):cl((bt-(IN+N*PER))/0.6);
+   const ly=cur?y+fs+28:y+fs+8;X.strokeText(e.c.toUpperCase(),x,ly);X.fillText(e.c.toUpperCase(),x,ly);X.restore()}});
+ // flyer card
+ const k=Math.floor((bt-IN)/PER),card=$('card'),line=$('line');
+ if(!fin&&k>=0&&k<N){const e=EV[k],u=(bt-IN-k*PER)*B,L=PER*B;if(card.dataset.i!=k){card.dataset.i=k;$('cim').style.backgroundImage=`url(${e.fl})`;$('cdy').textContent=DAY[e.d]+(e.h?' · ORE '+e.h:'');$('cti').textContent=e.t;$('cti').style.fontSize=Math.min(56,500/(e.t.length*0.44))+'px';$('cvn').textContent=e.v+' · '+e.c}
+  const [px,py]=P(e.lat,e.lon);const U0=B/2;const a=eb((u-U0)/0.2),o=cl((u-U0)/0.04)*(1-cl((u-(L-0.22))/0.18));const kk=u>U0?lv:0;const ch=card.offsetHeight,top=Math.max(420,py-90-ch);
+  card.style.left=(540-280)+'px';card.style.top=top+'px';card.style.opacity=o;card.style.transform=`translateY(${-14*kk}px) scale(${Math.max(0.01,a)*(1+0.085*kk)}) rotate(${(1-eo((u-U0)/0.35))*(k%2?5:-5)+(k%2?1:-1)*1.2*kk}deg)`;card.style.boxShadow=`0 ${20+30*kk}px ${50+60*kk}px rgba(0,0,0,.8)`;
+  line.style.left=(px-1.5)+'px';line.style.top=(top+ch)+'px';line.style.height=Math.max(0,py-top-ch-24)+'px';line.style.opacity=o;line.style.transform=`scaleY(${eo((u-B/2-0.05)/0.2)})`}
+ else{card.style.opacity=0;line.style.opacity=0}
+ $('hd').style.opacity=cl(t/0.25)*(bt<IN-0.6?1:1-cl((bt-(IN-0.6))/0.4))+(fin?cl((bt-(IN+N*PER))/0.5):0);
+ const v=(bt-(IN+N*PER+0.6))*B;$('cta').style.opacity=cl(v/0.4);$('cta').style.transform=`translateY(${24*(1-eo(v/0.6))}px)`;
+ document.body.style.opacity=cl(t/0.12)*(1-cl((t-(DUR-0.5))/0.48))};
+</script></body></html>

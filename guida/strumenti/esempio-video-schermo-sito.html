@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden;background:#0c0c0b;color:#f3e2b0}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 55%,#2a1d10 0,#0c0c0b 70%)}
+.bar{position:absolute;left:0;right:0;height:16px;z-index:70;background:linear-gradient(90deg,#ab0a05 0 33.33%,#dc9605 33.33% 66.66%,#0a5a0a 66.66%)}
+#win{position:absolute;left:40px;top:470px;width:1000px;height:1240px;border-radius:16px;overflow:hidden;background:#202124;box-shadow:0 40px 100px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08);transform-origin:50% 50%}
+#chrome{position:absolute;left:0;right:0;top:0;height:92px;background:#35363a}
+.dots{position:absolute;left:22px;top:20px;display:flex;gap:10px}.dots i{width:16px;height:16px;border-radius:50%}
+#tab{position:absolute;left:120px;top:10px;width:330px;height:38px;background:#202124;border-radius:10px 10px 0 0;font-family:Archivo;font-size:17px;color:#e8eaed;display:flex;align-items:center;gap:10px;padding-left:14px}
+#tab img{width:20px;height:20px;border-radius:50%}
+#url{position:absolute;left:20px;right:20px;top:50px;height:34px;border-radius:17px;background:#202124;font-family:Archivo;font-size:18px;color:#e8eaed;display:flex;align-items:center;padding-left:20px;gap:10px}
+#url b{color:#9aa0a6;font-weight:400}
+#view{position:absolute;left:0;right:0;top:92px;bottom:0;overflow:hidden;background:#eadcb4}
+#pg{position:absolute;left:0;top:0;width:1000px;transform-origin:0 0}
+#pg img{display:block;width:1000px}
+#hl{position:absolute;border:5px solid #dc9605;border-radius:16px;box-shadow:0 0 0 2000px rgba(0,0,0,.5),0 0 40px rgba(220,150,5,.8);opacity:0;pointer-events:none}
+#cur{position:absolute;width:34px;height:34px;z-index:20;filter:drop-shadow(0 3px 4px rgba(0,0,0,.6))}
+#hd{position:absolute;left:40px;right:40px;top:230px;text-align:center;z-index:30}
+#hd .t{font-family:Anton;font-size:84px;line-height:1;text-transform:uppercase;text-shadow:0 6px 30px rgba(0,0,0,.9)}
+#hd .t em{font-style:normal;color:#ffd98a}
+#chip{position:absolute;left:0;right:0;top:1760px;text-align:center;z-index:30}
+#chip span{display:inline-block;font-family:'Space Mono';font-weight:700;font-size:30px;letter-spacing:.12em;background:#ab0a05;color:#f3e2b0;padding:10px 18px;opacity:0}
+#end{position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;background:rgba(12,12,11,.86)}
+#end img{width:170px;height:170px;border-radius:50%;margin-bottom:34px}
+#end .t{font-family:Anton;font-size:108px;line-height:.98;text-transform:uppercase}
+#end .t em{font-style:normal;color:#ffd98a}
+#end .u{margin-top:34px;font-family:'Space Mono';font-weight:700;font-size:32px;background:#f3e2b0;color:#0c0c0b;padding:12px 20px}
+</style></head><body>
+<div id="bg"></div>
+<div id="hd"><div class="t">Ogni weekend<br><em>si accendono tanti sound</em></div></div>
+<div id="win"><div id="chrome"><div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+ <div id="tab"><img src="logo-circle.png">Eventi — Sound System Diaries</div>
+ <div id="url">🔒 soundsystemdiaries.it<b>/#events</b></div></div>
+ <div id="view"><div id="pg"><img src="page.jpg"><div id="hl"></div></div>
+ <svg id="cur" viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#fff" stroke="#000" stroke-width="1.5"/></svg></div></div>
+<div id="chip"><span id="cs"></span></div>
+<div id="end"><img src="logo-circle.png"><div class="t">Il tuo evento<br><em>non c'è?</em></div><div class="s" style="font-family:Anton;font-size:76px;line-height:1;text-transform:uppercase;margin-top:14px;color:#f3e2b0">Aggiungiamolo</div><div class="u">soundsystemdiaries.it/aggiungi/evento</div></div>
+<div class="bar" style="top:0"></div><div class="bar" style="bottom:0"></div>
+<script src="data.js"></script><script>
+const DUR=NB*B;window.DUR=DUR;
+const $=i=>document.getElementById(i),cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-cl(x),3),eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2},eb=x=>{x=cl(x);const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const K=1000/1280; // css px -> window px
+const VH=1240-92, PH=CARDS.bb.y+CARDS.bb.height+300;
+const C=n=>CARDS.cards.find(c=>c.t.startsWith(n));
+const STOPS=[{c:C('Yaga Yaga'),lab:'ROMA · 28 NOVEMBRE',s:1.2,z:3.0,e:4.4},{c:C('Dub Temple'),lab:'PADOVA · 12 DICEMBRE',s:4.4,z:6.6,e:7.8},{c:C('Winston Francis'),lab:'BOLOGNA · 12 DICEMBRE',s:7.8,z:8.3,e:9.6},{c:C('Winter Bless'),lab:'TRASIMENO · CAPODANNO',s:9.6,z:11.4,e:12.8}];
+const yFor=c=>Math.min(PH*K-VH,Math.max(0,(c.y+c.h/2)*K-VH/2));
+function state(bt){let y=0,zoom=0,cur=null;
+ for(let i=0;i<STOPS.length;i++){const S=STOPS[i],prev=i?yFor(STOPS[i-1].c):0,ty=yFor(S.c);
+  if(bt<S.s){return{y:prev,zoom:0,cur:null}}
+  if(bt<S.z){const u=(bt-S.s)/(S.z-S.s);return{y:prev+(ty-prev)*eio(u),zoom:0,cur:null,scroll:true}}
+  if(bt<S.e){const u=(bt-S.z)/(S.e-S.z);return{y:ty,zoom:eo(u/0.35)*(1-eio((u-0.75)/0.25)),cur:S,u}}
+  y=ty}
+ return{y,zoom:0,cur:null}}
+window.render=function(t){const bt=t/B,lv=LV[Math.min(LV.length-1,Math.floor(t*30))]||0;
+ const st=state(bt);const pg=$('pg');
+ let tr=`translate(0px,${-st.y}px)`;
+ const hl=$('hl');
+ if(st.cur){const c=st.cur.c,cx=(c.x+c.w/2)*K,cy=(c.y+c.h/2)*K,Z=1+1.25*st.zoom;
+  // zoom around card centre, keep it centred in view
+  const vx=500,vy=VH/2;tr=`translate(${vx-(cx)*Z+(cx-vx)*(1-st.zoom)*0}px,${vy-(cy)*Z+ (cy-st.y-vy)*(1-st.zoom)}px) scale(${Z})`;
+  if(st.zoom<0.001)tr=`translate(0px,${-st.y}px)`;
+  hl.style.left=(c.x*K-6)+'px';hl.style.top=(c.y*K-6)+'px';hl.style.width=(c.w*K+12)+'px';hl.style.height=(c.h*K+12)+'px';hl.style.opacity=st.zoom;
+  $('cs').textContent=st.cur.lab;$('cs').style.opacity=st.zoom;$('cs').style.transform=`scale(${1+0.04*lv})`}
+ else{hl.style.opacity=0;$('cs').style.opacity=0}
+ pg.style.transform=tr;
+ // cursor: sits at the right, nudges during scroll, moves to the card on zoom
+ const cu=$('cur');let cxp=760,cyp=520+Math.sin(t*1.3)*12;if(st.scroll)cyp+=Math.sin(t*28)*3;
+ if(st.cur){const c=st.cur.c;cxp=760+((c.x+c.w*0.6)*K-760)*eo(st.u/0.3);cyp=cyp+(VH*0.55-cyp)*eo(st.u/0.3)}
+ cu.style.left=cxp+'px';cu.style.top=cyp+'px';
+ // intro + window
+ $('win').style.transform=`translateY(${(1-eb(t/0.7))*900}px) scale(${1-0.06*eio((bt-12.9)/0.8)})`;
+ $('hd').style.opacity=cl(t/0.25);$('hd').querySelector('.t').style.transform=`scale(${0.92+0.08*eo(t/0.5)})`;
+ const v=bt-12.9;$('end').style.opacity=cl(v/0.5);$('end').querySelector('.t').style.transform=`scale(${0.92+0.08*eo(v/0.6)})`;
+ document.body.style.opacity=cl(t/0.1)*(1-cl((t-(DUR-0.45))/0.43))};
+</script></body></html>

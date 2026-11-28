@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box}html,body{width:1080px;height:1920px;overflow:hidden;background:#0c0c0b;color:#f3e2b0}
+#bg{position:absolute;inset:0;background:url(mosaic.jpg) center/cover;filter:grayscale(.5) brightness(.32) contrast(1.1)}
+#sh{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 50% 52%,rgba(12,12,11,.25) 0,rgba(12,12,11,.92) 80%)}
+.bar{position:absolute;left:0;right:0;height:18px;background:linear-gradient(90deg,#ab0a05 0 33.33%,#dc9605 33.33% 66.66%,#0a5a0a 66.66%)}
+#top{position:absolute;left:0;right:0;top:250px;text-align:center}
+.chip{display:inline-block;font-family:'Space Mono';font-weight:700;font-size:30px;letter-spacing:.2em;background:#ab0a05;color:#f3e2b0;padding:10px 20px}
+.big{position:relative;font-family:Anton;font-size:250px;line-height:.9;text-transform:uppercase;margin-top:34px;text-shadow:0 10px 50px rgba(0,0,0,.9)}
+.big .o{position:absolute;left:0;right:0;top:14px;color:transparent;-webkit-text-stroke:3px rgba(171,10,5,.85);transform:translate(10px,0);z-index:-1}
+.sub{font-family:Archivo;font-weight:700;font-size:56px;margin-top:14px}
+#map{position:absolute;left:190px;top:780px;width:700px;height:800px}
+#bot{position:absolute;left:0;right:0;top:1600px;text-align:center}
+.ns{font-family:Anton;font-size:96px;color:#e8291f;text-transform:uppercase;line-height:1}
+.tg{font-family:'Space Mono';font-weight:700;font-size:27px;letter-spacing:.24em;margin-top:18px;color:#f3e2b0}
+</style></head><body>
+<div id="bg"></div><div id="sh"></div>
+<div id="top"><span class="chip">SOUND SYSTEM DIARIES</span>
+<div class="big"><span class="o">Il diario</span>Il diario</div>
+<div class="sub">dei sound system italiani</div></div>
+<svg id="map" viewBox="0 0 700 800"></svg>
+<div id="bot"><div class="ns">Da nord a sud</div><div class="tg">ROOTS · REGGAE · DUB · CULTURE</div></div>
+<div class="bar" style="top:0"></div><div class="bar" style="bottom:0"></div>
+<script src="d.js"></script><script>
+const W=700,H=800,lo0=6.5,lo1=18.6,la0=36.6,la1=47.1;
+const k=Math.cos(42*Math.PI/180),sx=W/((lo1-lo0)*k),sy=H/(la1-la0),s=Math.min(sx,sy);
+const ox=(W-(lo1-lo0)*k*s)/2;
+const P=(lo,la)=>[ox+(lo-lo0)*k*s,(la1-la)*s];
+let h='';for(const poly of POLY){for(const ring of poly){h+='<path d="M'+ring.map(p=>P(p[0],p[1]).map(v=>v.toFixed(1)).join(',')).join('L')+'Z" fill="rgba(243,226,176,.10)" stroke="rgba(243,226,176,.7)" stroke-width="2.2" stroke-linejoin="round"/>'}}
+for(const [la,lo] of DOTS){const [x,y]=P(lo,la);h+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="16" fill="rgba(232,41,31,.18)"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6.5" fill="#e8291f"/>`}
+document.getElementById('map').innerHTML=h;
+</script></body></html>

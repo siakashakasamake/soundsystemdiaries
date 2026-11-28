@@ -1,0 +1,113 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#333;color:#f3e2b0;width:1080px}
+.f{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0c0c0b;margin-bottom:40px}
+.f.c{height:1350px}
+.bar{position:absolute;left:0;right:0;height:16px;z-index:50;background:linear-gradient(90deg,#ab0a05 0 33.33%,#dc9605 33.33% 66.66%,#0a5a0a 66.66%)}
+.bt{top:0}.bb{bottom:0}
+.mos{position:absolute;inset:0;background:url(mosaic.jpg) center/cover;filter:grayscale(.4) brightness(.3)}
+.glow{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 50%,rgba(42,29,16,.75) 0,rgba(12,12,11,.95) 75%)}
+.chip{display:inline-block;font-family:'Space Mono';font-weight:700;font-size:28px;letter-spacing:.2em;background:#ab0a05;color:#f3e2b0;padding:10px 18px}
+.T{font-family:Anton;text-transform:uppercase;line-height:.95;text-shadow:0 8px 40px rgba(0,0,0,.9)}
+.T em{font-style:normal;color:#ffd98a}
+.S{font-family:Archivo;font-weight:700}
+.M{font-family:'Space Mono';font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.url{display:inline-block;font-family:'Space Mono';font-weight:700;font-size:32px;background:#f3e2b0;color:#0c0c0b;padding:12px 20px}
+.ctr{position:absolute;left:60px;right:60px;text-align:center}
+.tag{position:absolute;right:28px;top:40px;z-index:60;font-family:'Space Mono';font-size:20px;background:rgba(0,0,0,.6);color:#9a9;padding:6px 10px}
+.photo{position:absolute;background:url(mosaic.jpg) center 30%/cover;filter:sepia(.35) contrast(1.05) brightness(.8)}
+</style></head><body>
+
+<!-- 1 APERTURA REEL -->
+<div class="f" id="apertura"><div class="mos"></div><div class="glow"></div>
+ <div class="ctr" style="top:640px"><span class="chip">SOUND SYSTEM DIARIES</span>
+  <div class="T" style="font-size:150px;margin-top:34px">Titolo<br><em>del reel</em></div>
+  <div class="S" style="font-size:46px;margin-top:28px">Sottotitolo breve, una riga</div></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 2 CHIUSURA REEL -->
+<div class="f" id="chiusura"><div class="glow" style="background:#0c0c0b"></div>
+ <div class="ctr" style="top:560px"><img src="logo-circle.png" style="width:200px;height:200px;border-radius:50%">
+  <div class="T" style="font-size:120px;margin-top:40px">Frase<br><em>finale</em></div>
+  <div style="margin-top:44px"><span class="url">soundsystemdiaries.it</span></div></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 3 SPOTLIGHT -->
+<div class="f" id="spotlight">
+ <div class="photo" style="left:0;right:0;top:0;height:1150px"></div>
+ <div style="position:absolute;left:0;right:0;top:700px;height:460px;background:linear-gradient(180deg,rgba(12,12,11,0),#0c0c0b)"></div>
+ <div style="position:absolute;left:70px;top:200px"><span class="chip">SPOTLIGHT</span></div>
+ <div style="position:absolute;left:70px;right:70px;top:1000px">
+  <div class="M" style="font-size:28px;color:#ffd98a">CITTÀ · REGIONE · DAL ANNO</div>
+  <div class="T" style="font-size:130px;margin-top:14px">Nome del<br>sound system</div>
+  <div class="S" style="font-size:38px;line-height:1.35;margin-top:30px;max-width:900px;color:rgba(243,226,176,.92);border-left:6px solid #dc9605;padding-left:24px">"Citazione dalla loro storia, parola per parola."</div>
+  <div class="S" style="font-size:30px;margin-top:40px;color:#b8a985">La loro storia nel diario · soundsystemdiaries.it</div></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 4 EVENTO WEEKEND -->
+<div class="f" id="evento"><div class="glow" style="background:radial-gradient(ellipse 80% 55% at 50% 55%,#1d1a14 0,#0c0c0b 75%)"></div>
+ <svg id="map" viewBox="0 0 1080 1920" style="position:absolute;inset:0"></svg>
+ <div class="ctr" style="top:230px"><div class="T" style="font-size:96px">Questo weekend<br><em>si accendono tanti sound</em></div></div>
+ <div style="position:absolute;left:300px;top:760px;width:480px;transform:rotate(-3deg);background:#f3e2b0;padding:16px 16px 70px;box-shadow:0 30px 80px rgba(0,0,0,.85)">
+  <div style="height:600px;background:#2a2a28;display:flex;align-items:center;justify-content:center;font-family:'Space Mono';font-size:30px;color:#888;text-align:center">FLYER<br>DELL'EVENTO</div>
+  <div class="M" style="position:absolute;left:0;right:0;bottom:18px;text-align:center;font-size:26px;color:#0c0c0b;letter-spacing:.12em">CITTÀ · GIORNO MESE</div></div>
+ <div class="ctr" style="top:1640px"><span class="url" style="font-size:30px">Tutti gli eventi su soundsystemdiaries.it</span></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 5 STORIA DAL SITO -->
+<div class="f" id="sito"><div class="glow" style="background:radial-gradient(ellipse 80% 50% at 50% 55%,#2a1d10 0,#0c0c0b 70%)"></div>
+ <div class="ctr" style="top:230px"><div class="T" style="font-size:88px">Cerca il tuo sound<br><em>nel diario</em></div></div>
+ <div style="position:absolute;left:40px;top:520px;width:1000px;height:1180px;border-radius:16px;overflow:hidden;background:#202124;box-shadow:0 40px 100px rgba(0,0,0,.8)">
+  <div style="height:92px;background:#35363a;position:relative"><div style="position:absolute;left:22px;top:20px;display:flex;gap:10px"><i style="width:16px;height:16px;border-radius:50%;background:#ff5f57"></i><i style="width:16px;height:16px;border-radius:50%;background:#febc2e"></i><i style="width:16px;height:16px;border-radius:50%;background:#28c840"></i></div>
+   <div style="position:absolute;left:20px;right:20px;top:50px;height:34px;border-radius:17px;background:#202124;font-family:Archivo;font-size:18px;color:#e8eaed;display:flex;align-items:center;padding-left:20px">🔒 soundsystemdiaries.it/#sound/…</div></div>
+  <div style="position:absolute;inset:92px 0 0;background:#eadcb4;display:flex;align-items:center;justify-content:center;font-family:'Space Mono';font-size:30px;color:#6b5a3a;text-align:center">SCHERMATA REALE<br>DEL SITO</div></div>
+ <div class="ctr" style="top:1760px"><span class="chip" style="font-size:28px">NON C'È? AGGIUNGIAMOLO</span></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 6 ZONA SICURA -->
+<div class="f" id="zona-sicura"><div class="mos" style="filter:grayscale(1) brightness(.18)"></div>
+ <div style="position:absolute;left:0;right:0;top:0;height:250px;background:rgba(171,10,5,.35)"></div>
+ <div style="position:absolute;left:0;right:0;bottom:0;height:340px;background:rgba(171,10,5,.35)"></div>
+ <div style="position:absolute;right:0;top:250px;bottom:340px;width:140px;background:rgba(171,10,5,.25)"></div>
+ <div style="position:absolute;left:60px;right:140px;top:250px;bottom:340px;border:4px dashed #ffd98a"></div>
+ <div style="position:absolute;left:60px;right:140px;top:600px;height:720px;border:4px solid #3fae4f;background:rgba(10,90,10,.12)"></div>
+ <div class="ctr" style="top:90px"><div class="M" style="font-size:30px">NOME PROFILO / BARRA STORIA</div></div>
+ <div class="ctr" style="top:1660px"><div class="M" style="font-size:30px">CAPTION · PULSANTI · RISPOSTA</div></div>
+ <div style="position:absolute;right:10px;top:900px;width:120px;text-align:center" class="M"><span style="font-size:22px;letter-spacing:.05em">LIKE<br>COMM.<br>SHARE</span></div>
+ <div style="position:absolute;left:90px;right:170px;top:300px" class="M"><span style="font-size:26px;color:#ffd98a">ZONA SICURA · TESTI E LOGHI</span></div>
+ <div style="position:absolute;left:90px;right:170px;top:640px" class="M"><span style="font-size:26px;color:#7dff9a">CENTRO · VISIBILE ANCHE NELLA GRIGLIA (COVER)</span></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 7 CAROSELLO COPERTINA -->
+<div class="f c" id="carosello-copertina"><div class="mos"></div><div class="glow"></div>
+ <div class="ctr" style="top:380px"><span class="chip">SOUND SYSTEM DIARIES</span>
+  <div class="T" style="font-size:150px;margin-top:30px">Titolo<br><em>del carosello</em></div>
+  <div class="M" style="font-size:26px;margin-top:40px;color:#b8a985">SCORRI →</div></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 8 CAROSELLO SLIDE SOUND -->
+<div class="f c" id="carosello-slide">
+ <div class="photo" style="left:60px;right:60px;top:80px;height:700px;border:6px solid #f3e2b0"></div>
+ <div style="position:absolute;left:60px;right:60px;top:830px">
+  <div class="M" style="font-size:24px;color:#ffd98a">CITTÀ · REGIONE</div>
+  <div class="T" style="font-size:96px;margin-top:10px">Nome del sound</div>
+  <div class="S" style="font-size:30px;line-height:1.4;margin-top:18px;color:rgba(243,226,176,.9)">Anteprima della bio, due righe al massimo, con le parole del sound.</div></div>
+ <div style="position:absolute;right:60px;bottom:50px" class="M"><span style="font-size:20px;color:#b8a985">SOUNDSYSTEMDIARIES.IT</span></div>
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<!-- 9 POST SINGOLO / ANNUNCIO -->
+<div class="f c" id="post"><div class="glow" style="background:#0c0c0b"></div>
+ <div style="position:absolute;left:70px;top:120px"><span class="chip">NEL DIARIO</span></div>
+ <div style="position:absolute;left:70px;right:70px;top:300px">
+  <div class="T" style="font-size:170px;line-height:.9">Una frase<br><em>forte</em></div>
+  <div class="S" style="font-size:40px;line-height:1.35;margin-top:40px;max-width:820px">Un testo breve che spiega la notizia in una o due righe.</div></div>
+ <div style="position:absolute;left:70px;bottom:90px"><span class="url" style="font-size:28px">soundsystemdiaries.it</span></div>
+ <img src="logo-circle.png" style="position:absolute;right:70px;bottom:70px;width:130px;height:130px;border-radius:50%">
+ <div class="bar bt"></div><div class="bar bb"></div></div>
+
+<script src="d.js"></script><script>
+const W=760,H=870,ox0=160,oy0=560,lo0=6.5,lo1=18.6,la0=36.6,la1=47.1,k=Math.cos(42*Math.PI/180),s=Math.min(W/((lo1-lo0)*k),H/(la1-la0)),ox=ox0+(W-(lo1-lo0)*k*s)/2;
+const P=(lo,la)=>[ox+(lo-lo0)*k*s,oy0+(la1-la)*s];let h='';
+for(const poly of POLY)for(const r of poly)h+='<path d="M'+r.map(p=>P(p[0],p[1]).map(v=>v.toFixed(1)).join(',')).join('L')+'Z" fill="rgba(243,226,176,.07)" stroke="rgba(243,226,176,.55)" stroke-width="2.5"/>';
+for(const [la,lo] of DOTS){const [x,y]=P(lo,la);h+=`<circle cx="${x}" cy="${y}" r="6" fill="#e8291f" opacity=".75"/>`}
+document.getElementById('map').innerHTML=h;
+</script></body></html>
